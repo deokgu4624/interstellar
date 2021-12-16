@@ -1,0 +1,34 @@
+.Wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.card{
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+.progress{
+    width: 100%;
+}
+.dotWrapper{
+    position: relative;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 10px;
+}
+.dot{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 10px;
+    background-color: white;
+    border-radius: 30px;
+}

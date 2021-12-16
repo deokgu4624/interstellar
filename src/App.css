@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
 
-.App-logo {
-  height: 40vmin;
+body{ 
+  -ms-overflow-style: none;
+  font-family: 'Exo 2', sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+  text-align: left;
+  font-weight: 300;
+  user-select: none
+} 
+::-webkit-scrollbar { 
+  display: none; 
+}
+html, body, #root{
+  width: 100%;
+  height: 100%;
+}
+.canvas-wrapper{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.canvas-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.card{
+  border: none;
+  color: white;
+  background-color: transparent;
+}
+.card-text{
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 4px;
+}
+.hold{
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  top: 0;
+}
+.lineWrapper{
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  top: 0;
   pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.line{
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  opacity: .05;
+  position: absolute;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.line:nth-child(1){
+  top: 10%;
+}
+.line:nth-child(2){
+  bottom: 10%;
+}
+.backgroundText{
+  background-color: rgba(255, 255, 255, 0.205);
+  padding: 2px;
+  letter-spacing: 1px;
+}
+.text{
+  font-size: 12px;
+  padding: 2px;
+  letter-spacing: 1px;
+  margin: 0;
+  font-weight: 200;
+}
+.bottom{
+  position: absolute;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  bottom: 10%;
+  padding: 30px;
+  pointer-events: none;
+  overflow: hidden;
+}
+.line2{
+  top: 50%;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  opacity: .5;
+}
+.sideNavWrapper{
+  height: 30px;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.pointLine{
+  width: 100px;
+  height: 1px;
+  background-color: white;
+  display: inline-block;
+  margin-right: 30px;
+  margin-bottom: 3px;
+}
+.endurance{
+  font-family: 'Days One', sans-serif;
+  font-size: 10px;
+}
+span{
+  margin-right: 20px;
+  display: inline-block;
+}
+.rotate{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: none;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.rotateText{
+  position: absolute;
+  top: 60%;
+  font-size: 12px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rotateImg{
+  width: 30%;
+  max-width: 150px;
 }
