@@ -4,7 +4,8 @@
 
 ## 프로젝트 구조
 
-`App.js` `Model.js` `Loading.js` `Header.js`
+`App.js` `Model.js` `Loading.js` `Header.js` 으로 구성이 되어있습니다.
+`App.js`의 state에 따라 props 값을 전달하여 3d 모델과 애니메이션을 제어하는 구조입니다.
 
 ### `npm start`
 
