@@ -15,14 +15,6 @@ const [state, setState] = useState(0);
 `App.js` 에는 크게 `<Canvas />`, 클릭에 따라서 `state` 값이 변경된는 `<div />`, 'state' 값에 따라 상태가 전환되는 각각의 `<motion.div />` 들로 만들어져있습니다. 
 
 ```javascript
-<Canvas dpr={[1, 2]} shadows camera={{position:[0,1,-20],fov:30, zoom:1.5}} style={{position:'absolute', width:'100%', height:'100%', top:0, left:0}}>
-  <Suspense fallback={null}>
-    <Model state={state} />
-  </Suspense>
-</Canvas>
-```
-
-```javascript
 {state === 0 || state === 1 ? <motion.div className={'hold'}
   onMouseDown={()=>{setState(1)}}
   onMouseUp={()=>{setState(0)}}
@@ -30,6 +22,7 @@ const [state, setState] = useState(0);
   onTouchEnd={()=>{setState(0)}}
 />:null}
 ```
+마우스를 누르면 `state`가 1이 되고 떼면 0이 되는 `<div />` 를 만들어서 사용자가 `state`를 변경할 수 있게 하였습니다.
 
 ```javascript
 <motion.div className={'card-text'}
