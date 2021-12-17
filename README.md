@@ -2,9 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 프로젝트 구조
 
-In the project directory, you can run:
+In the project directory, you can run: `react-three-fiber`
 
 ### `npm start`
 
