@@ -33,6 +33,7 @@ const [state, setState] = useState(0);
   GARGANTUA
 </motion.div>
 ```
+애니메이션은 `framer-motion`을 사용하였는데 설정에 조건을 달아서 `state` 값에 따라 다른 값을 가지도록 하였습니다.
 
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146590606-14c217b9-d8a3-4526-9a1c-6dc0a33d2a55.png)
 
