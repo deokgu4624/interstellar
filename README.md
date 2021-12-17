@@ -41,6 +41,21 @@ const [state, setState] = useState(0);
 
 메인화면에서 마우스를 눌러서 `state`가 1이 되면 `props`로 전달된 값에 따라 `Model.js`의 오브젝트는 확대되며 `Header.js`의 요소들도 사라진 후 가르강튀아의 간단한 개요가 나오도록 하였습니다.
 
+```javascript
+<motion.div className={'sideNavWrapper'}
+  initial={{opacity:.5}}
+  animate={{opacity: state===1 || state===2 ? 0 : .5}}
+  transition={{duration:.3, delay: state===1 ? 0 : .3}}
+  whileHover={{opacity: state===0 || state===1 ?.8 : 0}}
+  onClick={()=>{
+    setState(2)
+  }}
+>
+  <div className={'pointLine'} />
+  <span className={'endurance'}>ENDURANCE</span>
+</motion.div>
+```
+
 ### `npm start`
 
 Runs the app in the development mode.\
