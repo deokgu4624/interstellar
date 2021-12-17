@@ -14,6 +14,15 @@
 
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
 
+```javascript
+      {state === 0 || state === 1 ? <motion.div className={'hold'}
+        onMouseDown={()=>{setState(1)}}
+        onMouseUp={()=>{setState(0)}}
+        onTouchStart={()=>{setState(1)}}
+        onTouchEnd={()=>{setState(0)}}
+      />:null}
+```
+
 ### `npm start`
 
 Runs the app in the development mode.\
