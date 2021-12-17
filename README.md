@@ -39,7 +39,7 @@ const [state, setState] = useState(0);
 
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
 
-메인화면에서 마우스를 눌러서 `state`가 1이 되면 `props`로 전달된 값에 따라 `Model.js`의 오브젝트는 확대되며 `Header.js`의 요소들도 사라진 후 가르강튀아의 간단한 개요가 나오도록 하였습니다.
+메인화면에서 마우스를 눌러서 `state` 값이 1이 되면 `props`로 전달된 값에 따라 `Model.js`의 오브젝트는 확대되며 `Header.js`의 요소들도 사라진 후 가르강튀아의 간단한 개요가 나오도록 하였습니다.
 
 ```javascript
 <motion.div className={'sideNavWrapper'}
@@ -55,6 +55,8 @@ const [state, setState] = useState(0);
   <span className={'endurance'}>ENDURANCE</span>
 </motion.div>
 ```
+메인화면에 있는 ENDURANCE 버튼입니다. 클릭하면 `state` 값이 2가 되고 그에 따라 `Model.js`의 오브젝트가 확대되고 인듀어런스호 를 조명하여 `Orbitcontrol`이 되게 하였습니다
+
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146599635-84af71f9-6fea-40c1-8c58-4cff861a6056.png)
 
 ### `npm start`
