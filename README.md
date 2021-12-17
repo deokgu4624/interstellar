@@ -31,6 +31,7 @@ const [state, setState] = useState(0);
 />:null}
 ```
 
+```javascript
 <motion.div className={'card-text'}
   initial={{opacity:0}}
   animate={{opacity: state===1 ? 1 : 0}}
@@ -38,7 +39,8 @@ const [state, setState] = useState(0);
 >
   GARGANTUA
 </motion.div>
-                    
+```
+
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146590606-14c217b9-d8a3-4526-9a1c-6dc0a33d2a55.png)
 
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
