@@ -39,7 +39,7 @@ const [state, setState] = useState(0);
 
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
 
-
+메인화면에서 마우스를 누르면 화면이 조금 확대되며 헤더가 사라진 후 가르강튀아의 설명이 나오도록 하였습니다.
 
 ### `npm start`
 
