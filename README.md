@@ -10,10 +10,7 @@ const [state, setState] = useState(0);
 ```
 `App.js`의 `state` 값에 따라 각 컴포넌트에 `props` 로 전달하여 3d 모델과 애니메이션을 제어하는 구조입니다.
 
-![제목 없음](https://user-images.githubusercontent.com/37141223/146590606-14c217b9-d8a3-4526-9a1c-6dc0a33d2a55.png)
-
-![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
-
+## App.js
 ```javascript
 {state === 0 || state === 1 ? <motion.div className={'hold'}
   onMouseDown={()=>{setState(1)}}
@@ -22,6 +19,13 @@ const [state, setState] = useState(0);
   onTouchEnd={()=>{setState(0)}}
 />:null}
 ```
+`App.js` 에는 클릭에 따라서 `state` 값이 변경된는 `<div />`태그
+
+![제목 없음](https://user-images.githubusercontent.com/37141223/146590606-14c217b9-d8a3-4526-9a1c-6dc0a33d2a55.png)
+
+![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
+
+
 
 ### `npm start`
 
