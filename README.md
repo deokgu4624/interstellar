@@ -61,6 +61,52 @@ const [state, setState] = useState(0);
 
 ## Model.js
 
+```javascript
+useFrame(() => {
+        if(props.state === 0){
+            modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x, .5, .05)
+            modelWrapper.current.scale.y = THREE.MathUtils.lerp(modelWrapper.current.scale.y, .5, .05)
+            modelWrapper.current.scale.z = THREE.MathUtils.lerp(modelWrapper.current.scale.z, .5, .05)
+            model.current.rotation.y = model.current.rotation.y + .002
+            setState(0)
+            setFrequncy(0)
+            modelWrapper.current.position.y = THREE.MathUtils.lerp(modelWrapper.current.position.y, 0, .05)
+            myCamera.current.target.z = THREE.MathUtils.lerp(myCamera.current.target.z, 0, .1)
+            enduranceModel.current.scale.x = THREE.MathUtils.lerp(enduranceModel.current.scale.x, 0, .05)
+            enduranceModel.current.scale.y = THREE.MathUtils.lerp(enduranceModel.current.scale.y, 0, .05)
+            enduranceModel.current.scale.z = THREE.MathUtils.lerp(enduranceModel.current.scale.z, 0, .05)
+        }
+        if(props.state === 1){
+            modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x, 1, .05)
+            modelWrapper.current.scale.y = THREE.MathUtils.lerp(modelWrapper.current.scale.y, 1, .05)
+            modelWrapper.current.scale.z = THREE.MathUtils.lerp(modelWrapper.current.scale.z, 1, .05)
+            model.current.rotation.y = model.current.rotation.y + .02
+            setState(0.001)
+            setFrequncy(5)
+            modelWrapper.current.position.y = THREE.MathUtils.lerp(modelWrapper.current.position.y, 0, .05)
+            myCamera.current.target.z = THREE.MathUtils.lerp(myCamera.current.target.z, 0, .1)
+            enduranceModel.current.scale.x = THREE.MathUtils.lerp(enduranceModel.current.scale.x, 0, .05)
+            enduranceModel.current.scale.y = THREE.MathUtils.lerp(enduranceModel.current.scale.y, 0, .05)
+            enduranceModel.current.scale.z = THREE.MathUtils.lerp(enduranceModel.current.scale.z, 0, .05)
+        }
+        if(props.state === 2 || props.state === 3){
+            modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x, 1.2, .01)
+            modelWrapper.current.scale.y = THREE.MathUtils.lerp(modelWrapper.current.scale.y, 1.2, .01)
+            modelWrapper.current.scale.z = THREE.MathUtils.lerp(modelWrapper.current.scale.z, 1.2, .01)
+            modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x, 1.2, .01)
+            model.current.rotation.y = model.current.rotation.y + .02
+            modelWrapper.current.position.y = THREE.MathUtils.lerp(modelWrapper.current.position.y, .7, .05)
+            myCamera.current.target.z = THREE.MathUtils.lerp(myCamera.current.target.z, -15, .015)
+            setState(0.003)
+            setFrequncy(8)
+            enduranceModel.current.rotation.x = enduranceModel.current.rotation.x + .05
+            enduranceModel.current.scale.x = THREE.MathUtils.lerp(enduranceModel.current.scale.x, .005, .01)
+            enduranceModel.current.scale.y = THREE.MathUtils.lerp(enduranceModel.current.scale.y, .005, .01)
+            enduranceModel.current.scale.z = THREE.MathUtils.lerp(enduranceModel.current.scale.z, .005, .01)
+        }
+    })
+```
+
 ### `npm start`
 
 Runs the app in the development mode.\
