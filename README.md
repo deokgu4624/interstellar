@@ -5,7 +5,7 @@
 ## 프로젝트 구조
 
 `App.js` `Model.js` `Loading.js` `Header.js` 으로 구성이 되어있습니다.
-```
+```javascript
   const [state, setState] = useState(0);
 ```
 `App.js`의 `state` 값에 따라 각 컴포넌트에 `props` 로 전달하여 3d 모델과 애니메이션을 제어하는 구조입니다.
