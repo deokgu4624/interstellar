@@ -4,7 +4,7 @@
 
 ## 프로젝트 구조
 
-In the project directory, you can run: `react-three-fiber`
+`App.js` `Model.js` `Loading.js` `Header.js`
 
 ### `npm start`
 
