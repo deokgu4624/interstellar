@@ -12,7 +12,7 @@ const [state, setState] = useState(0);
 
 ## App.js
 
-`App.js` 에는 `<Canvas />`, 클릭에 따라서 `state` 값이 변경된는 `<div />`, 'state' 값에 따라 상태가 전환되는 각각의 `<motion.div />` 들로 만들어져있습니다. 
+`App.js` 에는 크게 `<Canvas />`, 클릭에 따라서 `state` 값이 변경된는 `<div />`, 'state' 값에 따라 상태가 전환되는 각각의 `<motion.div />` 들로 만들어져있습니다. 
 
 ```javascript
 <Canvas dpr={[1, 2]} shadows camera={{position:[0,1,-20],fov:30, zoom:1.5}} style={{position:'absolute', width:'100%', height:'100%', top:0, left:0}}>
