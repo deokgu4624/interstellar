@@ -1,6 +1,6 @@
 # 인터스텔라 웹사이트
 
-`react-three-fiber``react-bootstrap`
+`react-three-fiber` `react-bootstrap`
 
 ## 프로젝트 구조
 
