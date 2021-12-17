@@ -6,7 +6,7 @@
 
 `App.js` `Model.js` `Loading.js` `Header.js` 으로 구성이 되어있습니다.
 ```javascript
-  const [state, setState] = useState(0);
+const [state, setState] = useState(0);
 ```
 `App.js`의 `state` 값에 따라 각 컴포넌트에 `props` 로 전달하여 3d 모델과 애니메이션을 제어하는 구조입니다.
 
@@ -15,12 +15,12 @@
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
 
 ```javascript
-      {state === 0 || state === 1 ? <motion.div className={'hold'}
-        onMouseDown={()=>{setState(1)}}
-        onMouseUp={()=>{setState(0)}}
-        onTouchStart={()=>{setState(1)}}
-        onTouchEnd={()=>{setState(0)}}
-      />:null}
+{state === 0 || state === 1 ? <motion.div className={'hold'}
+  onMouseDown={()=>{setState(1)}}
+  onMouseUp={()=>{setState(0)}}
+  onTouchStart={()=>{setState(1)}}
+  onTouchEnd={()=>{setState(0)}}
+/>:null}
 ```
 
 ### `npm start`
