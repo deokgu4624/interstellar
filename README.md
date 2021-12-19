@@ -107,6 +107,11 @@ useFrame(() => {
     })
 ```
 `useFrame`을 사용해서 `state` 값에 따라 상태가 변하도록 조건문으로 분류하였습니다.
+
+```javascript
+modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x, .5, .05)
+```
+`scale`은 `THREE.MathUtils.lerp`를 사용해 부드러운 움직임을 주었습니다.
 ### `npm start`
 
 Runs the app in the development mode.\
