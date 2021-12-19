@@ -138,6 +138,7 @@ modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x
     </Row>
   </motion.div>
 </motion.div>
+```
 
 ## Header.js
 
