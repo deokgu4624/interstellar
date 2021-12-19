@@ -114,6 +114,30 @@ modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x
 `scale`은 `THREE.MathUtils.lerp`를 사용해 부드러운 움직임을 주었습니다.
 
 ## Loading.js
+```javascript
+<motion.div className={styles.Wrapper}
+            initial={{display:'block'}}
+            animate={{display:progress === 100 ? 'none' : 'block'}}
+            transition={{delay:.5}}
+>
+  <motion.div className='w-100 h-100' style={{backgroundColor:'black'}}
+      initial={{opacity:1}}
+      animate={{opacity:progress === 100 ? 0 : 1}}
+      transition={{delay:0, duration:.3}}
+  >
+    <Row className="justify-content-md-center h-100">
+        <Col xl={6} className='h-100'>
+          <Card className={styles.card}>
+              <Card.Body >
+                      <div className={styles.progress}>
+                          <div>{Math.floor(progress*1)/1}% loading</div>
+                      </div>
+              </Card.Body>
+          </Card>
+        </Col>
+    </Row>
+  </motion.div>
+</motion.div>
 
 ## Header.js
 
