@@ -115,30 +115,12 @@ modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x
 
 ## Loading.js
 ```javascript
-<motion.div className={styles.Wrapper}
-            initial={{display:'block'}}
-            animate={{display:progress === 100 ? 'none' : 'block'}}
-            transition={{delay:.5}}
->
-  <motion.div className='w-100 h-100' style={{backgroundColor:'black'}}
-      initial={{opacity:1}}
-      animate={{opacity:progress === 100 ? 0 : 1}}
-      transition={{delay:0, duration:.3}}
-  >
-    <Row className="justify-content-md-center h-100">
-        <Col xl={6} className='h-100'>
-          <Card className={styles.card}>
-              <Card.Body >
-                      <div className={styles.progress}>
-                          <div>{Math.floor(progress*1)/1}% loading</div>
-                      </div>
-              </Card.Body>
-          </Card>
-        </Col>
-    </Row>
-  </motion.div>
-</motion.div>
+<div className={styles.progress}>
+    <div>{Math.floor(progress*1)/1}% loading</div>
+</div>
 ```
+
+`useProgress`를 사용하여 로딩의 숫자를 표시했고 `Math.floor`를 사용하여 소수점 이하를 버렸습니다.
 
 ## Header.js
 
