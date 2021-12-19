@@ -112,6 +112,9 @@ useFrame(() => {
 modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x, .5, .05)
 ```
 `scale`은 `THREE.MathUtils.lerp`를 사용해 부드러운 움직임을 주었습니다.
+
+## Header.js
+
 ### `npm start`
 
 Runs the app in the development mode.\
