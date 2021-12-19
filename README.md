@@ -106,7 +106,7 @@ useFrame(() => {
         }
     })
 ```
-
+`useFrame`을 사용해서 `state` 값에 따라 상태가 변하도록 조건문으로 분류하였습니다.
 ### `npm start`
 
 Runs the app in the development mode.\
