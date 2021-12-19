@@ -113,6 +113,8 @@ modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x
 ```
 `scale`은 `THREE.MathUtils.lerp`를 사용해 부드러운 움직임을 주었습니다.
 
+## Loading.js
+
 ## Header.js
 
 ### `npm start`
