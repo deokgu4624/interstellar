@@ -106,7 +106,7 @@ useFrame(() => {
         }
     })
 ```
-`useFrame`을 사용해서 `state` 값에 따라 상태가 변하도록 조건문으로 분류하였습니다. `scale`과 `rotation` 그리고 `setState`와 `setFrequncy`는 `<CameraShake />`의 흔들림 정도, 빈도를 변경하는 `useState`입니다.
+`useFrame`을 사용해서 `state` 값에 따라 상태가 변하도록 조건문으로 분류하였습니다. 변경되는 부분은 `scale`과 `rotation`이 있고 `setState`와 `setFrequncy`는 `<CameraShake />`의 흔들림 정도, 빈도를 변경하는 `useState`입니다.
 
 ```javascript
 modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x, .5, .05)
