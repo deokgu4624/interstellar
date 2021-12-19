@@ -1,6 +1,6 @@
 # 인터스텔라 웹사이트
 
-`react-three-fiber` `react-three/drei` `react-three/postprocessing` `react-bootstrap` `framer-motion`
+`react` `react-three-fiber` `react-three/drei` `react-three/postprocessing` `react-bootstrap` `framer-motion`
 
 ## 프로젝트 구조
 
