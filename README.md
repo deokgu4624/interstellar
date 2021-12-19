@@ -122,6 +122,13 @@ modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x
 
 `useProgress`를 사용하여 로딩의 숫자를 표시했고 `Math.floor`를 사용하여 소수점 이하를 버렸습니다.
 
+<motion.div className={styles.Wrapper}
+            initial={{display:'block'}}
+            animate={{display:progress === 100 ? 'none' : 'block'}}
+            transition={{delay:.5}}
+>
+이런식으로 조건문을 달아 `progress` 가 100이 되면 로딩화면이 사라지게 하였습니다.
+
 ## Header.js
 
 ### `npm start`
