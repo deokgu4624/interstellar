@@ -116,7 +116,7 @@ modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x
 ## Loading.js
 ```javascript
 <div className={styles.progress}>
-    <div>{Math.floor(progress*1)/1}% loading</div>
+    <div>{Math.floor(progress)}% loading</div>
 </div>
 ```
 
