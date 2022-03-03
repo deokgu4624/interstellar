@@ -1,7 +1,5 @@
 # 인터스텔라 웹사이트
 
-`react` `react-three-fiber` `react-three/drei` `react-three/postprocessing` `react-bootstrap` `framer-motion`
-
 ## 목차
 1. [개요](#개요)  
 2. [과정](#과정)  
@@ -9,7 +7,7 @@
   2-2. [webgl 애니메이션 넣기](#webgl-애니메이션-넣기)  
   2-3. [기타 애니메이션](#기타-애니메이션)  
   2-4. [로딩 화면 만들기](#로딩-화면-만들기)  
-  
+3. [사용한 라이브러리](#사용한-라이브러리)  
 `App.js` `Model.js` `Loading.js` `Header.js` 으로 구성이 되어있습니다.
 ```javascript
 const [state, setState] = useState(0);
@@ -18,6 +16,7 @@ const [state, setState] = useState(0);
 
 ## 개요
 WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 구현한 프로젝트입니다.
+
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146590606-14c217b9-d8a3-4526-9a1c-6dc0a33d2a55.png)
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146599635-84af71f9-6fea-40c1-8c58-4cff861a6056.png)
@@ -139,3 +138,6 @@ modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x
 ```
 
 이런식으로 조건문을 달아 `progress` 가 100이 되면 로딩화면이 사라지게 하였습니다.
+
+## 사용한 라이브러리
+`react` `react-three-fiber` `react-three/drei` `react-three/postprocessing` `react-bootstrap` `framer-motion`
