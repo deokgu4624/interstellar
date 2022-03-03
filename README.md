@@ -3,19 +3,18 @@
 ## 목차
 1. [개요](#개요)  
 2. [과정](#과정)  
-  2-1. [webgl 불러오기](#webgl-불러오기)  
-  2-2. [webgl 애니메이션 넣기](#webgl-애니메이션-넣기)  
-  2-3. [기타 애니메이션](#기타-애니메이션)  
-  2-4. [로딩 화면 만들기](#로딩-화면-만들기)  
+  2.1. [webgl 불러오기](#webgl-불러오기)  
+  2.2. [webgl 애니메이션 넣기](#webgl-애니메이션-넣기)  
+  2.3. [기타 애니메이션](#기타-애니메이션)  
+  2.4. [로딩 화면 만들기](#로딩-화면-만들기)  
 3. [사용한 라이브러리](#사용한-라이브러리)  
-`App.js` `Model.js` `Loading.js` `Header.js` 으로 구성이 되어있습니다.
+
+## 개요
+React와 WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 구현한 프로젝트입니다. 
 ```javascript
 const [state, setState] = useState(0);
 ```
 `App.js`의 `state` 값에 따라 각 컴포넌트에 `props` 로 전달하여 3d 모델과 애니메이션을 제어하는 구조입니다.
-
-## 개요
-WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 구현한 프로젝트입니다. React 사용
 
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146590606-14c217b9-d8a3-4526-9a1c-6dc0a33d2a55.png)
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
@@ -67,7 +66,6 @@ WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 구현한 
 메인화면에 있는 ENDURANCE 버튼입니다. 클릭하면 `state` 값이 2가 되고 그에 따라 `Model.js`의 오브젝트가 확대되고 인듀어런스호 를 조명하여 `Orbitcontrol`이 되게 하였습니다
 
 ### webgl 애니메이션 넣기
-
 ```javascript
 useFrame(() => {
         if(props.state === 0){
