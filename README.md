@@ -5,8 +5,8 @@
 ## 프로젝트 구조
 
 목차
-[1. 개요](#index-text)
-[1. 모델 불러오기](#model-js)
+[1. 개요](#index-text)  
+[1. 모델 불러오기](#model-js)  
 `App.js` `Model.js` `Loading.js` `Header.js` 으로 구성이 되어있습니다.
 ```javascript
 const [state, setState] = useState(0);
