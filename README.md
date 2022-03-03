@@ -121,13 +121,13 @@ modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x
 `scale`은 `THREE.MathUtils.lerp`를 사용해 부드러운 움직임을 주었습니다.
 ### 기타 애니메이션
 ### 로딩 화면 만들기
+`useProgress`를 사용하여 로딩의 숫자를 표시했고 `Math.floor`를 사용하여 소수점 이하를 버렸습니다.
+
 ```javascript
 <div className={styles.progress}>
     <div>{Math.floor(progress)}% loading</div>
 </div>
 ```
-
-`useProgress`를 사용하여 로딩의 숫자를 표시했고 `Math.floor`를 사용하여 소수점 이하를 버렸습니다.
 
 ```
 <motion.div className={styles.Wrapper}
