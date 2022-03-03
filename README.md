@@ -15,7 +15,7 @@ const [state, setState] = useState(0);
 `App.js`의 `state` 값에 따라 각 컴포넌트에 `props` 로 전달하여 3d 모델과 애니메이션을 제어하는 구조입니다.
 
 ## 개요
-WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 구현한 프로젝트입니다.
+WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 구현한 프로젝트입니다. React 사용
 
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146590606-14c217b9-d8a3-4526-9a1c-6dc0a33d2a55.png)
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
@@ -119,7 +119,7 @@ useFrame(() => {
 modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x, .5, .05)
 ```
 `scale`은 `THREE.MathUtils.lerp`를 사용해 부드러운 움직임을 주었습니다.
-
+### 기타 애니메이션
 ### 로딩 화면 만들기
 ```javascript
 <div className={styles.progress}>
