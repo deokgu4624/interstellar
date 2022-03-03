@@ -3,11 +3,13 @@
 `react` `react-three-fiber` `react-three/drei` `react-three/postprocessing` `react-bootstrap` `framer-motion`
 
 ## 목차
-[1. 개요](#개요)  
-[2. 과정](#과정)  
-[2-1. webgl 불러오기](#model-js)  
-[3. webgl 애니메이션 넣기](#model-js)  
-[4. 기타 상호작용](#model-js)  
+1. [개요](#개요)  
+2. [과정](#과정)  
+  2-1. [webgl 불러오기](#webgl-불러오기)  
+  2-2. [webgl 애니메이션 넣기](#webgl-애니메이션-넣기)  
+  2-3. [기타 애니메이션](#기타-애니메이션)  
+  2-4. [로딩 화면 만들기](#로딩-화면-만들기)  
+  
 `App.js` `Model.js` `Loading.js` `Header.js` 으로 구성이 되어있습니다.
 ```javascript
 const [state, setState] = useState(0);
@@ -15,7 +17,9 @@ const [state, setState] = useState(0);
 `App.js`의 `state` 값에 따라 각 컴포넌트에 `props` 로 전달하여 3d 모델과 애니메이션을 제어하는 구조입니다.
 
 ## 개요
+WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 구현한 프로젝트입니다.
 ## 과정
+### webgl 불러오기
 `App.js` 에는 크게 `<Canvas />`, 클릭에 따라서 `state` 값이 변경된는 `<div />`, 'state' 값에 따라 상태가 전환되는 각각의 `<motion.div />` 들로 만들어져있습니다. 
 
 ```javascript
@@ -63,7 +67,7 @@ const [state, setState] = useState(0);
 
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146599635-84af71f9-6fea-40c1-8c58-4cff861a6056.png)
 
-## Model js
+### webgl 애니메이션 넣기
 
 ```javascript
 useFrame(() => {
@@ -117,7 +121,7 @@ modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x
 ```
 `scale`은 `THREE.MathUtils.lerp`를 사용해 부드러운 움직임을 주었습니다.
 
-## Loading.js
+### 로딩 화면 만들기
 ```javascript
 <div className={styles.progress}>
     <div>{Math.floor(progress)}% loading</div>
