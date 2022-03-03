@@ -6,7 +6,7 @@
 
 목차
 [1. 개요](#index-text)
-[1. 모델 불러오기](#model.js)
+[1. 모델 불러오기](#model-js)
 `App.js` `Model.js` `Loading.js` `Header.js` 으로 구성이 되어있습니다.
 ```javascript
 const [state, setState] = useState(0);
@@ -62,7 +62,7 @@ const [state, setState] = useState(0);
 
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146599635-84af71f9-6fea-40c1-8c58-4cff861a6056.png)
 
-## Model.js
+## Model js
 
 ```javascript
 useFrame(() => {
