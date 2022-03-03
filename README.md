@@ -18,6 +18,10 @@ const [state, setState] = useState(0);
 
 ## 개요
 WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 구현한 프로젝트입니다.
+![제목 없음](https://user-images.githubusercontent.com/37141223/146590606-14c217b9-d8a3-4526-9a1c-6dc0a33d2a55.png)
+![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
+![제목 없음](https://user-images.githubusercontent.com/37141223/146599635-84af71f9-6fea-40c1-8c58-4cff861a6056.png)
+
 ## 과정
 ### webgl 불러오기
 `App.js` 에는 크게 `<Canvas />`, 클릭에 따라서 `state` 값이 변경된는 `<div />`, 'state' 값에 따라 상태가 전환되는 각각의 `<motion.div />` 들로 만들어져있습니다. 
@@ -43,9 +47,7 @@ WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 구현한 
 ```
 애니메이션은 `framer-motion`을 사용하였는데 설정에 조건을 달아서 `state` 값에 따라 다른 값을 가지도록 하였습니다.
 
-![제목 없음](https://user-images.githubusercontent.com/37141223/146590606-14c217b9-d8a3-4526-9a1c-6dc0a33d2a55.png)
 
-![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
 
 메인화면에서 마우스를 눌러서 `state` 값이 1이 되면 `props`로 전달된 값에 따라 `Model.js`의 오브젝트는 확대되며 `Header.js`의 요소들도 사라진 후 가르강튀아의 간단한 개요가 나오도록 하였습니다.
 
@@ -64,8 +66,6 @@ WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 구현한 
 </motion.div>
 ```
 메인화면에 있는 ENDURANCE 버튼입니다. 클릭하면 `state` 값이 2가 되고 그에 따라 `Model.js`의 오브젝트가 확대되고 인듀어런스호 를 조명하여 `Orbitcontrol`이 되게 하였습니다
-
-![제목 없음](https://user-images.githubusercontent.com/37141223/146599635-84af71f9-6fea-40c1-8c58-4cff861a6056.png)
 
 ### webgl 애니메이션 넣기
 
