@@ -29,7 +29,7 @@ React와 WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 �
 </mesh>
 ```
 ### webgl 애니메이션 넣기
-`useFrame`을 사용해서 `state` 값에 따라 애니메이션이 동작되도록 조건문으로 분류하였습니다. `MathUtils.lerp`로 부드러운 움직임을 주었습니다. 변경되는 부분은 `scale`, `rotation`입니다. `setState`, `setFrequncy`는 카메라 흔들림 정도입니다.
+`useFrame`을 사용해서 `state` 값에 따라 애니메이션이 동작되도록 조건문으로 분류하였습니다. `MathUtils.lerp`로 부드러운 움직임을 주었습니다. 변경되는 부분은 3 `scale`, `rotation`입니다. `setState`, `setFrequncy`는 카메라 흔들림 정도입니다.
 ```javascript
 useFrame(() => {
         if(props.state === 0){
@@ -76,24 +76,51 @@ useFrame(() => {
     })
 ```
 ### 기타 애니메이션
+기타 ui 애니메이션입니다. `state`값에 따라 `opacity`가 변경됩니다.
+```javascript
+<motion.div className={styles.nav}
+  onClick={()=>{
+      setState(true)
+  }}
+  initial={{opacity:.5, y: 0, pointerEvents:'all'}}
+  animate={{opacity: props.state===1 || props.state ===2 ? 0 : .5, y: props.state===1 || props.state ===2 ? 10 : 0, pointerEvents: props.state===1 || props.state ===2 ? 'none' : 'all'}}
+  whileHover={{opacity:.8}}
+  transition={{duration:.5, delay: props.state===1 || props.state ===2 ? 0 : .4 ,type:'spring'}}
+>
+  ABOUT
+</motion.div>
+```
 ### 로딩 화면 만들기
-`useProgress`를 사용하여 로딩의 숫자를 표시했고 `Math.floor`를 사용하여 소수점 이하를 버렸습니다.
+`useProgress`로 진행도를 넘겨받아 `progress`가 100이 되면 로딩화면이 사라집니다. 3d모델이 2개이기 때문에 `total`값으로 퍼센티지가 표시됩니다.
 
 ```javascript
-<div className={styles.progress}>
-    <div>{Math.floor(progress)}% loading</div>
-</div>
-```
+const { progress, total } = useProgress();
 
+return(
+    <motion.div className={styles.Wrapper}
+        initial={{display:'block'}}
+        animate={{display:progress === 100 ? 'none' : 'block'}}
+        transition={{delay:.5}}
+    >
+        <motion.div className='w-100 h-100' style={{backgroundColor:'black'}}
+            initial={{opacity:1}}
+            animate={{opacity:progress === 100 ? 0 : 1}}
+            transition={{delay:0, duration:.3}}
+        >
+            <Row className="justify-content-md-center h-100">
+                <Col xl={6} className='h-100'>
+                <Card className={styles.card}>
+                    <Card.Body >
+                            <div className={styles.progress}>
+                                <div>{total*10}% loading</div>
+                            </div>
+                    </Card.Body>
+                </Card>
+                </Col>
+            </Row>
+        </motion.div>
+    </motion.div>
 ```
-<motion.div className={styles.Wrapper}
-  initial={{display:'block'}}
-  animate={{display:progress === 100 ? 'none' : 'block'}}
-  transition={{delay:.5}}
->
-```
-
-이런식으로 조건문을 달아 `progress` 가 100이 되면 로딩화면이 사라지게 하였습니다.
 
 ## 사용한 라이브러리
 `react` `react-three-fiber` `react-three/drei` `react-three/postprocessing` `react-bootstrap` `framer-motion`
