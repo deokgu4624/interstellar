@@ -12,11 +12,11 @@
 ## 개요
 React와 WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 구현한 프로젝트입니다. 애니메이션은 `useState`의 `state`값에 따라 다르게 실행됩니다.
 
-`state`=0 일때
+기본화면입니다. `state`=0
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146590606-14c217b9-d8a3-4526-9a1c-6dc0a33d2a55.png)
-`state`=1 일때
+왼쪽마우스를 누르고 있을 때 나오는 화면입니다. `state`= 1
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
-`state`=2 일때
+좌측에 Endurance버튼을 눌렀을 때 나오는 화면입니다. 왼쪽 마우스 클릭으로 카메라를 돌려볼 수 있습니다. `state`= 2
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146599635-84af71f9-6fea-40c1-8c58-4cff861a6056.png)
 
 ## 과정
