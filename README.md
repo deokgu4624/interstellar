@@ -1,66 +1,35 @@
 # 인터스텔라 웹사이트
 
-`react-three-fiber` `react-three/drei` `react-three/postprocessing` `react-bootstrap` `framer-motion`
+## 목차
+1. [개요](#개요)  
+2. [과정](#과정)  
+  2.1. [webgl 불러오기](#webgl-불러오기)  
+  2.2. [webgl 애니메이션 넣기](#webgl-애니메이션-넣기)  
+  2.3. [기타 애니메이션](#기타-애니메이션)  
+  2.4. [로딩 화면 만들기](#로딩-화면-만들기)  
+3. [사용한 라이브러리](#사용한-라이브러리)  
 
-## 프로젝트 구조
+## 개요
+React와 WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 구현한 프로젝트입니다. 애니메이션은 `useState`의 `state`값에 따라 다르게 실행됩니다.
 
-`App.js` `Model.js` `Loading.js` `Header.js` 으로 구성이 되어있습니다.
-```javascript
-const [state, setState] = useState(0);
-```
-`App.js`의 `state` 값에 따라 각 컴포넌트에 `props` 로 전달하여 3d 모델과 애니메이션을 제어하는 구조입니다.
-
-## App.js
-
-`App.js` 에는 크게 `<Canvas />`, 클릭에 따라서 `state` 값이 변경된는 `<div />`, 'state' 값에 따라 상태가 전환되는 각각의 `<motion.div />` 들로 만들어져있습니다. 
-
-```javascript
-{state === 0 || state === 1 ? <motion.div className={'hold'}
-  onMouseDown={()=>{setState(1)}}
-  onMouseUp={()=>{setState(0)}}
-  onTouchStart={()=>{setState(1)}}
-  onTouchEnd={()=>{setState(0)}}
-/>:null}
-```
-마우스를 누르면 `state`가 1이 되고 떼면 0이 되는 `<div />` 를 만들어서 사용자가 `state`를 변경할 수 있게 하였습니다.
-
-```javascript
-<motion.div className={'card-text'}
-  initial={{opacity:0}}
-  animate={{opacity: state===1 ? 1 : 0}}
-  transition={{delay: state===1 ? .3 : .1}}
->
-  GARGANTUA
-</motion.div>
-```
-애니메이션은 `framer-motion`을 사용하였는데 설정에 조건을 달아서 `state` 값에 따라 다른 값을 가지도록 하였습니다.
-
+기본화면입니다. `state`=0
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146590606-14c217b9-d8a3-4526-9a1c-6dc0a33d2a55.png)
-
+왼쪽마우스를 누르고 있을 때 나오는 화면입니다. `state`= 1
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146594542-f282959d-91f3-42b5-9603-dfac012d2a88.png)
-
-메인화면에서 마우스를 눌러서 `state` 값이 1이 되면 `props`로 전달된 값에 따라 `Model.js`의 오브젝트는 확대되며 `Header.js`의 요소들도 사라진 후 가르강튀아의 간단한 개요가 나오도록 하였습니다.
-
-```javascript
-<motion.div className={'sideNavWrapper'}
-  initial={{opacity:.5}}
-  animate={{opacity: state===1 || state===2 ? 0 : .5}}
-  transition={{duration:.3, delay: state===1 ? 0 : .3}}
-  whileHover={{opacity: state===0 || state===1 ?.8 : 0}}
-  onClick={()=>{
-    setState(2)
-  }}
->
-  <div className={'pointLine'} />
-  <span className={'endurance'}>ENDURANCE</span>
-</motion.div>
-```
-메인화면에 있는 ENDURANCE 버튼입니다. 클릭하면 `state` 값이 2가 되고 그에 따라 `Model.js`의 오브젝트가 확대되고 인듀어런스호 를 조명하여 `Orbitcontrol`이 되게 하였습니다
-
+좌측에 Endurance버튼을 눌렀을 때 나오는 화면입니다. 왼쪽 마우스 클릭으로 카메라를 돌려볼 수 있습니다. `state`= 2
 ![제목 없음](https://user-images.githubusercontent.com/37141223/146599635-84af71f9-6fea-40c1-8c58-4cff861a6056.png)
 
-## Model.js
-
+## 과정
+### webgl 불러오기
+`useGLTF`로 glb 파일을 불러왔습니다.
+```javascript
+<mesh ref={modelWrapper} position={[0, 0, 0]} rotation={[-.05,0,-.2]} scale={.5} opacity={0} transparent>
+    <primitive object={blackhole.scene} ref={model} position={[0, 0, 0]} />
+    <primitive object={endurance.scene} ref={enduranceModel} rotation={[0,0,1.6]} position={[0, .1, -12.5]} scale={0}/>
+</mesh>
+```
+### webgl 애니메이션 넣기
+`useFrame`을 사용해서 `state` 값에 따라 애니메이션이 동작되도록 조건문으로 분류하였습니다. `MathUtils.lerp`로 부드러운 움직임을 주었습니다. 변경되는 부분은 3 `scale`, `rotation`입니다. `setState`, `setFrequncy`는 카메라 흔들림 정도입니다.
 ```javascript
 useFrame(() => {
         if(props.state === 0){
@@ -106,28 +75,52 @@ useFrame(() => {
         }
     })
 ```
-`useFrame`을 사용해서 `state` 값에 따라 상태가 변하도록 조건문으로 분류하였습니다. 변경되는 부분은 `scale`과 `rotation`이 있고 `setState`와 `setFrequncy`는 `<CameraShake />`의 흔들림 정도, 빈도를 변경하는 `useState`입니다.
-
+### 기타 애니메이션
+기타 ui 애니메이션입니다. `state`값에 따라 `opacity`가 변경됩니다.
 ```javascript
-modelWrapper.current.scale.x = THREE.MathUtils.lerp(modelWrapper.current.scale.x, .5, .05)
-```
-`scale`은 `THREE.MathUtils.lerp`를 사용해 부드러운 움직임을 주었습니다.
-
-## Loading.js
-```javascript
-<div className={styles.progress}>
-    <div>{Math.floor(progress*1)/1}% loading</div>
-</div>
-```
-
-`useProgress`를 사용하여 로딩의 숫자를 표시했고 `Math.floor`를 사용하여 소수점 이하를 버렸습니다.
-
-```
-<motion.div className={styles.Wrapper}
-  initial={{display:'block'}}
-  animate={{display:progress === 100 ? 'none' : 'block'}}
-  transition={{delay:.5}}
+<motion.div className={styles.nav}
+  onClick={()=>{
+      setState(true)
+  }}
+  initial={{opacity:.5, y: 0, pointerEvents:'all'}}
+  animate={{opacity: props.state===1 || props.state ===2 ? 0 : .5, y: props.state===1 || props.state ===2 ? 10 : 0, pointerEvents: props.state===1 || props.state ===2 ? 'none' : 'all'}}
+  whileHover={{opacity:.8}}
+  transition={{duration:.5, delay: props.state===1 || props.state ===2 ? 0 : .4 ,type:'spring'}}
 >
+  ABOUT
+</motion.div>
+```
+### 로딩 화면 만들기
+`useProgress`로 진행도를 넘겨받아 `progress`가 100이 되면 로딩화면이 사라집니다. 3d모델이 2개이기 때문에 `total`값으로 퍼센티지가 표시됩니다.
+
+```javascript
+const { progress, total } = useProgress();
+
+return(
+    <motion.div className={styles.Wrapper}
+        initial={{display:'block'}}
+        animate={{display:progress === 100 ? 'none' : 'block'}}
+        transition={{delay:.5}}
+    >
+        <motion.div className='w-100 h-100' style={{backgroundColor:'black'}}
+            initial={{opacity:1}}
+            animate={{opacity:progress === 100 ? 0 : 1}}
+            transition={{delay:0, duration:.3}}
+        >
+            <Row className="justify-content-md-center h-100">
+                <Col xl={6} className='h-100'>
+                <Card className={styles.card}>
+                    <Card.Body >
+                            <div className={styles.progress}>
+                                <div>{total*10}% loading</div>
+                            </div>
+                    </Card.Body>
+                </Card>
+                </Col>
+            </Row>
+        </motion.div>
+    </motion.div>
 ```
 
-이런식으로 조건문을 달아 `progress` 가 100이 되면 로딩화면이 사라지게 하였습니다.
+## 사용한 라이브러리
+`react` `react-three-fiber` `react-three/drei` `react-three/postprocessing` `react-bootstrap` `framer-motion`
