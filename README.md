@@ -29,7 +29,7 @@ React와 WebGL을 사용해서 인터스텔라에 나오는 가르강튀아를 �
 </mesh>
 ```
 ### webgl 애니메이션 넣기
-`useFrame`을 사용해서 `state` 값에 따라 애니메이션이 동작되도록 조건문으로 분류하였습니다. `MathUtils.lerp`로 부드러운 움직임을 주었습니다. 변경되는 부분은 3 `scale`, `rotation`입니다. `setState`, `setFrequncy`는 카메라 흔들림 정도입니다.
+`useFrame`은 애니메이션을 실행합니다. `state` 값에 따라 애니메이션이 동작되도록 조건문으로 분류하였습니다. 부드러운 움직임을 위해 `MathUtils.lerp`가 . 변경되는 부분은 3 `scale`, `rotation`입니다. `setState`, `setFrequncy`는 카메라 흔들림 정도입니다.
 ```javascript
 useFrame(() => {
         if(props.state === 0){
