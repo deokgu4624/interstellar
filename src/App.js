@@ -217,10 +217,11 @@ function App() {
               <span className={'endurance'}>GARGANTUA</span>
               <div className={'pointLine'} style={{marginRight:0, marginLeft:'30px' , right: 0}} />
             </motion.div>
-            <div ref={pleaseRotate} className={'rotate'}>
+            {window.innerHeight > window.innerWidth ? 
+              <div ref={pleaseRotate} className={'rotate'}>
               <img src={rotateImg} className={'rotateImg'} alt='rotateImg' />
               <p className={'rotateText'}>PLEASE ROTATE YOUR DEVICE</p>
-            </div>
+            </div> : null}
             <Loading />
     </>
   )

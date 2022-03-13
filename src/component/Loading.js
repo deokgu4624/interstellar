@@ -4,7 +4,7 @@ import { Card, Col, Row } from 'react-bootstrap'
 import { motion } from 'framer-motion'
 
 export default function Loading(){
-    const { progress } = useProgress();
+    const { progress, total } = useProgress();
 
     return(
         <motion.div className={styles.Wrapper}
@@ -22,7 +22,7 @@ export default function Loading(){
                 <Card className={styles.card}>
                     <Card.Body >
                             <div className={styles.progress}>
-                                <div>{Math.floor(progress*1)/1}% loading</div>
+                                <div>{total*10}% loading</div>
                             </div>
                     </Card.Body>
                 </Card>

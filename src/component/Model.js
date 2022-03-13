@@ -78,8 +78,8 @@ export default function Model(props) {
     })
     return (
         <>
-            <mesh ref={modelWrapper} position={[0, 0, 0]} rotation={[-.05,0,-.2]} scale={.5}>
-                <primitive object={blackhole.scene} ref={model} position={[0, 0, 0]}/>
+            <mesh ref={modelWrapper} position={[0, 0, 0]} rotation={[-.05,0,-.2]} scale={.5} opacity={0} transparent>
+                <primitive object={blackhole.scene} ref={model} position={[0, 0, 0]} />
                 <primitive object={endurance.scene} ref={enduranceModel} rotation={[0,0,1.6]} position={[0, .1, -12.5]} scale={0}/>
             </mesh>
             <OrbitControls ref={myCamera} makeDefault enableZoom={false} maxPolarAngle={Math.PI/2} minPolarAngle={Math.PI/2.1} maxAzimuthAngle={3.14} minAzimuthAngle={2.5} />
